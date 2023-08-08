@@ -3,6 +3,7 @@ package com.example.ind8m6.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
 class RazaRetrofit {
 
     companion object {
