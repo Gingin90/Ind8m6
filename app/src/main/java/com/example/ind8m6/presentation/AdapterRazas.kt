@@ -20,7 +20,7 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AdapterRazas.ItemRazasViewHolder, position: Int) {
-     val raza =listItemRazas [position]
+     val raza =listItemRazas[position]
         holder.bind(raza)
     }
 

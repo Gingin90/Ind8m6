@@ -1,9 +1,12 @@
 package com.example.ind8m6.local
 
 import android.content.Context
+import androidx.room.Database
+import androidx.room.PrimaryKey
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+@Database(entities = [RazaEntity::class], version = 1)
 abstract class RazaDatabase: RoomDatabase() {
 
    abstract fun getRazaDao():RazaDao
