@@ -8,7 +8,5 @@ import androidx.room.PrimaryKey
 
 class RazaEntity (
 
-    val raza:String    )
-{
-    @PrimaryKey(autoGenerate = true) var id: Long= 0
-}
+    @PrimaryKey val raza:String    )
+
