@@ -13,5 +13,5 @@ import androidx.room.Query
         suspend fun insertRaza(razaEntity: RazaEntity)
 
         @Query(" Select * from tabla_razas order by raza desc ")
-        fun getRazas(): LiveData<RazaEntity>
+        fun getRazas(): LiveData<List<RazaEntity>>
     }
