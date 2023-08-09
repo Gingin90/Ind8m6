@@ -2,7 +2,9 @@ package com.example.ind8m6.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ej5m6.R
 import com.example.ej5m6.databinding.ItemRazasBinding
 import com.example.ind8m6.local.RazaEntity
 
@@ -41,6 +43,10 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
 
          fun bind(raza:RazaEntity){
              razasVistas.txtRaza.text =raza.raza
+
+             razasVistas.cardViewRazas.setOnClickListener{
+                 Navigation.findNavController(razasVistas.root).navigate(R.id.action_listadoRazas_to_fragmentDetalle)
+             }
 
 
 
