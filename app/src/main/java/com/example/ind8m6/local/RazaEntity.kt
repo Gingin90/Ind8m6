@@ -4,8 +4,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName ="tabla_razas")
- data class RazaEntity (
+@Entity(tableName = "tabla_razas")
+data class RazaEntity(
 
-    @PrimaryKey val raza:String    )
+    @PrimaryKey val raza: String
+)
 

@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.Ind8m6.presentation.RazaViewModel
-import com.example.ej5m6.R
 import com.example.ej5m6.databinding.FragmentDetalleBinding
-import com.example.ej5m6.databinding.FragmentListadoRazasBinding
+
 
 
 private const val ARG_PARAM1 = "id"
@@ -34,9 +33,17 @@ class FragmentDetalle : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDetalleBinding.inflate(layoutInflater, container, false)
-        //initAdapter()
+        initAdapter()
         razaViewModel.getDetallePerro(param1.toString())
         return binding.root
+    }
+
+    private fun initAdapter() {
+     val adapter = AdapterDetalle()
+        binding.recyclerViewdet.adapter = adapter
+        razaViewModel.detalleLiveData(param1.toString()).observe(viewLifecycleOwner){
+            adapter.setDataDetalle(it)
+        }
     }
 
 

@@ -13,7 +13,7 @@ class RazaViewModel(application: Application) : AndroidViewModel(application) {
     private val repositorio: Repositorio
 
     fun razaLiveData() = repositorio.obtenerRazasEntetity()
-    fun DetalleLiveData(id: String) = repositorio.obtenerDetalleEntity(id)
+    fun detalleLiveData(id: String) = repositorio.obtenerDetalleEntity(id)
 
     init {
         val api = RazaRetrofit.getRetroFitRaza()
