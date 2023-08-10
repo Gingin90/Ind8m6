@@ -26,5 +26,7 @@ class RazaViewModel (application: Application) : AndroidViewModel(application) {
 
 
         }
-
+    fun getDetallePerro(id:String) = viewModelScope.launch {
+        repositorio.getDetallePerro(id)
+    }
 }

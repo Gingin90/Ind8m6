@@ -4,6 +4,6 @@ import androidx.room.Entity
 
 
 @Entity(tableName = "tabla_razasDetalle", primaryKeys = ["razaDetalle","url"])
-    data class RazaDetalle(
+    data class RazaDetalleEntity(
         val razaDetalle:String,
         val url: String)
