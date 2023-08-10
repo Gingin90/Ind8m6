@@ -15,7 +15,10 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
 
     val listItemRazas = mutableListOf<RazaEntity>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterRazas.ItemRazasViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): AdapterRazas.ItemRazasViewHolder {
         binding = ItemRazasBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ItemRazasViewHolder(binding)
@@ -23,7 +26,7 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AdapterRazas.ItemRazasViewHolder, position: Int) {
-     val raza =listItemRazas[position]
+        val raza = listItemRazas[position]
         holder.bind(raza)
     }
 
@@ -31,7 +34,7 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
         return listItemRazas.size
     }
 
-    fun setData(razas:List<RazaEntity>){
+    fun setData(razas: List<RazaEntity>) {
         this.listItemRazas.clear()
         this.listItemRazas.addAll(razas)
         notifyDataSetChanged()
@@ -40,21 +43,22 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
     }
 
 
-    class ItemRazasViewHolder(val razasVistas:ItemRazasBinding):RecyclerView.ViewHolder(razasVistas.root) {
+    class ItemRazasViewHolder(val razasVistas: ItemRazasBinding) :
+        RecyclerView.ViewHolder(razasVistas.root) {
 
-         fun bind(raza:RazaEntity){
-             val bundle = Bundle()
-             razasVistas.txtRaza.text =raza.raza
-            bundle.putString("id",raza.raza)
-             razasVistas.cardViewRazas.setOnClickListener{
-                 Navigation.findNavController(razasVistas.root).navigate(R.id.action_listadoRazas_to_fragmentDetalle,bundle)
-             }
+        fun bind(raza: RazaEntity) {
+
+            razasVistas.txtRaza.text = raza.raza
+            razasVistas.cardViewRazas.setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("id", raza.raza)
+
+                Navigation.findNavController(razasVistas.root)
+                    .navigate(R.id.action_listadoRazas_to_fragmentDetalle, bundle)
+            }
 
 
-
-         }
-
-
+        }
 
 
     }
