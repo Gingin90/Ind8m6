@@ -12,7 +12,7 @@ import com.example.ej5m6.databinding.FragmentListadoRazasBinding
 
 class ListadoRazas : Fragment() {
     lateinit var binding: FragmentListadoRazasBinding
-    val razaViewModel: RazaViewModel by activityViewModels()
+      val razaViewModel: RazaViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

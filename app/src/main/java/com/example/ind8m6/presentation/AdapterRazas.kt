@@ -12,8 +12,7 @@ import com.example.ind8m6.local.RazaEntity
 class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
 
     lateinit var binding: ItemRazasBinding
-
-    val listItemRazas = mutableListOf<RazaEntity>()
+  val listItemRazas = mutableListOf<RazaEntity>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
