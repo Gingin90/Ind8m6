@@ -1,5 +1,6 @@
 package com.example.ind8m6.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.ind8m6.local.RazaDao
 import com.example.ind8m6.local.RazaEntity
@@ -26,4 +27,11 @@ class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {
             }
         }
     }
+suspend fun getDetallePerro(id:String) {
 
+    val response = razaAPI.getDetallePerro(id)
+    if (response.isSuccessful) {
+    }else{
+        Log.e( "repositorio",response.errorBody().toString)
+    }
+    }

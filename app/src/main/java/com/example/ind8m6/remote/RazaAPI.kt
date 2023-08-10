@@ -9,7 +9,5 @@ interface RazaAPI {
         @GET("breeds/list/all")
 
         suspend fun getData(): Response<Raza>
-
-    @GET("breeds/id}/image")
-
-    suspend fun getDetallePerro@Path("id") id:String):Response<PerroDetalle>
+    @GET("breed/{id}/images")
+    suspend fun getDetallePerro(@Path("id") id: String): Response<PerroDetalle>}
