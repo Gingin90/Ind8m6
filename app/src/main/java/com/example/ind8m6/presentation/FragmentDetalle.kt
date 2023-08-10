@@ -10,7 +10,6 @@ import com.example.Ind8m6.presentation.RazaViewModel
 import com.example.ej5m6.databinding.FragmentDetalleBinding
 
 
-
 private const val ARG_PARAM1 = "id"
 
 class FragmentDetalle : Fragment() {

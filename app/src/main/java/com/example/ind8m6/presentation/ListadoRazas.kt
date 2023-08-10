@@ -10,10 +10,9 @@ import com.example.Ind8m6.presentation.RazaViewModel
 import com.example.ej5m6.databinding.FragmentListadoRazasBinding
 
 
-
 class ListadoRazas : Fragment() {
-    lateinit var binding : FragmentListadoRazasBinding
-     val  razaViewModel: RazaViewModel by  activityViewModels()
+    lateinit var binding: FragmentListadoRazasBinding
+    val razaViewModel: RazaViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,21 +20,20 @@ class ListadoRazas : Fragment() {
     ): View? {
 
         binding = FragmentListadoRazasBinding.inflate(layoutInflater, container, false)
-         initAdapter()
+        initAdapter()
         razaViewModel.getAllRazas()
         return binding.root
     }
 
 
-
     private fun initAdapter() {
         val adapter = AdapterRazas()
-        binding.recyclerView.adapter =adapter
-        razaViewModel.razaLiveData().observe(viewLifecycleOwner){
+        binding.recyclerView.adapter = adapter
+        razaViewModel.razaLiveData().observe(viewLifecycleOwner) {
             adapter.setData(it)
         }
 
-        }
     }
+}
 
 
