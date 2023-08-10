@@ -12,7 +12,7 @@ class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {
 
     fun obtenerRazasEntetity(): LiveData<List<RazaEntity>> = razaDao.getRazas()
 
-
+   fun obtenerDetalleEntity(id:String): LiveData<List<RazaDetalleEntity>> =razaDao.getRazaDetalle(id)
     suspend fun getRazas() {
 
         val response = razaAPI.getData()

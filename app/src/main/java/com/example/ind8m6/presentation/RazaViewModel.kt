@@ -9,24 +9,26 @@ import com.example.ind8m6.remote.RazaRetrofit
 import kotlinx.coroutines.launch
 
 
-class RazaViewModel (application: Application) : AndroidViewModel(application) {
-        private val repositorio: Repositorio
+class RazaViewModel(application: Application) : AndroidViewModel(application) {
+    private val repositorio: Repositorio
 
-          fun razaLiveData()= repositorio.obtenerRazasEntetity()
+    fun razaLiveData() = repositorio.obtenerRazasEntetity()
+    fun DetalleLiveData(id: String) = repositorio.obtenerDetalleEntity(id)
 
-        init {
-            val api = RazaRetrofit.getRetroFitRaza()
-            val razaDatabase = RazaDatabase.getDatabase(application).getRazaDao()
-            repositorio = Repositorio(api,razaDatabase)
-        }
-
-
-        fun getAllRazas() = viewModelScope.launch {
-            repositorio.getRazas()
+    init {
+        val api = RazaRetrofit.getRetroFitRaza()
+        val razaDatabase = RazaDatabase.getDatabase(application).getRazaDao()
+        repositorio = Repositorio(api, razaDatabase)
+    }
 
 
-        }
-    fun getDetallePerro(id:String) = viewModelScope.launch {
+    fun getAllRazas() = viewModelScope.launch {
+        repositorio.getRazas()
+
+
+    }
+
+    fun getDetallePerro(id: String) = viewModelScope.launch {
         repositorio.getDetallePerro(id)
     }
 }
