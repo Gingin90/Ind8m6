@@ -18,5 +18,9 @@
         android:id="@+id/fragmentDetalle"
         android:name="com.example.ind8m6.presentation.FragmentDetalle"
         android:label="fragment_detalle"
-        tools:layout="@layout/fragment_detalle" />
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_fragmentDetalle_to_listadoRazas"
+            app:destination="@id/listadoRazas" />
+    </fragment>
 </navigation>
