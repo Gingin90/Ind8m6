@@ -12,7 +12,9 @@ class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {
 
     fun obtenerRazasEntetity(): LiveData<List<RazaEntity>> = razaDao.getRazas()
 
-   fun obtenerDetalleEntity(id:String): LiveData<List<RazaDetalleEntity>> =razaDao.getRazaDetalle(id)
+    fun obtenerDetalleEntity(id: String): LiveData<List<RazaDetalleEntity>> =
+        razaDao.getRazaDetalle(id)
+
     suspend fun getRazas() {
 
         val response = razaAPI.getData()
@@ -22,6 +24,13 @@ class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {
             keys.forEach {
                 val razaEntity = RazaEntity(it)
                 razaDao.insertRaza(razaEntity)
+                try {
+
+
+                } catch (exception: Exception) {
+                    Log.e("catch", "")
+                }
+
             }
         } else {
             Log.e("repositorio", response.errorBody().toString())
