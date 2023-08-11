@@ -22,7 +22,7 @@ class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {
             val message = response.body()!!.message
             val keys = message.keys
             keys.forEach {raza->
-                val razaEntity = RazaEntity(raza)
+                val razaEntity = raza.toRazaEntity()
                 razaDao.insertRaza(razaEntity)
                 try {
 
