@@ -43,7 +43,7 @@ class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {
         val response = razaAPI.getDetallePerro(id)
         if (response.isSuccessful) {
             response.body()!!.message.forEach {
-                val razaDetalleEntity = RazaDetalleEntity(id, it)
+                val razaDetalleEntity = it.toEntity(id)
                 razaDao.insertDetallePerro(razaDetalleEntity)
             }
 
