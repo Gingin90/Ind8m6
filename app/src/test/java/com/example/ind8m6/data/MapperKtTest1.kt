@@ -8,5 +8,20 @@ class MapperKtTest {
 
     @Test
     fun toRazaEntity() {
+
+
+        //Given(dado este valor)
+
+        val raza = "razasiono"
+
+
+        //When(hago esta acción)
+
+        val  resultadoDeTransf=raza.toRazaEntity()
+        //Then(espero este resultado)
+        assertEquals(raza, resultadoDeTransf.raza) //Given(dado este valor)
+
+
+
     }
 }
