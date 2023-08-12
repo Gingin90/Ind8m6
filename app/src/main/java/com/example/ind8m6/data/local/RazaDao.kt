@@ -1,4 +1,4 @@
-package com.example.ind8m6.local
+package com.example.ind8m6.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -11,6 +11,10 @@ import androidx.room.Query
 interface RazaDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRaza(razaEntity: RazaEntity)
+
+    //para pruebas android
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertRaza(razaEntity: List<RazaEntity>)
 
     @Query(" Select * from tabla_razas order by raza desc ")
     fun getRazas(): LiveData<List<RazaEntity>>

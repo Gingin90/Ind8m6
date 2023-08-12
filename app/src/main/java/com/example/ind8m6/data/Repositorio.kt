@@ -2,10 +2,10 @@ package com.example.ind8m6.data
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import com.example.ind8m6.local.RazaDao
-import com.example.ind8m6.local.RazaDetalleEntity
-import com.example.ind8m6.local.RazaEntity
-import com.example.ind8m6.remote.RazaAPI
+import com.example.ind8m6.data.local.RazaDao
+import com.example.ind8m6.data.local.RazaDetalleEntity
+import com.example.ind8m6.data.local.RazaEntity
+import com.example.ind8m6.data.remote.RazaAPI
 
 
 class Repositorio(private val razaAPI: RazaAPI, private val razaDao: RazaDao) {

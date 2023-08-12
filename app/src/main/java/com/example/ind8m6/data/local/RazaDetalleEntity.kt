@@ -1,4 +1,4 @@
-package com.example.ind8m6.local
+package com.example.ind8m6.data.local
 
 import androidx.room.Entity
 

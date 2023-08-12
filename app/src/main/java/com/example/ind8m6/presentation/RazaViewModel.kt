@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ind8m6.data.Repositorio
-import com.example.ind8m6.local.RazaDatabase
-import com.example.ind8m6.remote.RazaRetrofit
+import com.example.ind8m6.data.local.RazaDatabase
+import com.example.ind8m6.data.remote.RazaRetrofit
 import kotlinx.coroutines.launch
 
 

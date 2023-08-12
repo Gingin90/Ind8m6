@@ -7,7 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ej5m6.R
 import com.example.ej5m6.databinding.ItemRazasBinding
-import com.example.ind8m6.local.RazaEntity
+import com.example.ind8m6.data.local.RazaEntity
 
 class AdapterRazas : RecyclerView.Adapter<AdapterRazas.ItemRazasViewHolder>() {
 

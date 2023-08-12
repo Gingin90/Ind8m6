@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.ej5m6.databinding.ItemDetalleBinding
-import com.example.ind8m6.local.RazaDetalleEntity
+import com.example.ind8m6.data.local.RazaDetalleEntity
 
 
 class AdapterDetalle : RecyclerView.Adapter<AdapterDetalle.DetallePerroViewHolder>() {
